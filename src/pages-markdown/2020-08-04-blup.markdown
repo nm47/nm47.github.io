@@ -1,0 +1,42 @@
+---
+path:   /blog/blup
+date:   2020-08-04
+title:  "Blüp Bubble Notifier"
+---
+
+
+While stuck in quarantine and waiting for parts for the cube, I picked up a little side project.
+
+![DEMO GIF ALT](../images/blup-demo.gif)
+
+When I recieve email, a bubble is blown and rises to the top of the soap tank. I also built a small website to blow bubbles of varying sizes and patterns.
+
+## Materials
+**ESP-01 -** A wifi chip with 2 GPIOs for the valve and pump.  
+**Clippard ET-2-6 -** Valve to control bubble size.  
+**2x IRLB8743PBF N-channel Mosfet -** Controls the pump/valve.  
+**Airline check valve -** Prevents soap coming down the wrong way.
+
+**JQB2438274 Mini air pump**  
+**DC Barrel jack**  
+**2x NPN transistor**  
+**Aquarium airline tubing**  
+**2x 10-32 x 3/16" hose barb**
+
+
+## The Problem
+
+The biggest issue getting this thing to work was how compact everything needed to be to fit in the base. It stands 3" tall, and 3.25" wide. I first tried to do this with only a pump, but I found that the constant stream of air led to inconsistent bubble size, as well as occasional streams of bubbles. The valve allows repeatable, consistent bubbles.
+
+Below is the design I settled on:
+
+![Blup main board](../images/blup-mainboard.jpg)
+
+## Design
+On the control board in the front you can see the ESP01 wifi antenna, along with two n-channel mosfets, a voltage regulator, and 2 flyback diodes. The blue board is a logic level converter, I used it because I ran out of npn transistors but it could be easily replaced by those.
+
+As I said earlier, the major problem with this project was fitting everything within the base. I milled it out of maple on my router so everything fit correctly, and it is all held together via the 4mm dowels in each hole. I wanted the bottom to be removeable in case I needed to fix anything, so the holes are oversized by 0.1mm. The other pieces are held together so strongly I don't think I could remove them without breaking the wood. 
+
+The other issue was relieving pressure from the tank. this is done with a brass tube that I bent to run along the contour of the bottle. As bubbles are blown, the air at the top of the tank exits into the base, and the bubble fills its place when it pops.
+
+If you'd like the files to do this project yourself, they will be available on my github [here,](https://github.com/nm47/Blup-Bubble-Notifier) along with pictures/video of the final product.
