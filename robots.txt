@@ -1,0 +1,2 @@
+User-agent: * 
+sitemap: https://nm47.github.io/sitemap.xml
